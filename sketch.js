@@ -1,28 +1,43 @@
-var myParagraph;
+let myParagraph;
+let button;
+let img = createImg('/assets/PacMan.png',
+'');
+
+
 
 function setup() {
+   createCanvas(300, 300)
+
+  button = createButton("Button")
   myParagraph = createP("html");
   myParagraph.position(0, 0);
-  myParagraph.mouseClicked(makeRed);
+  button.mousePressed(makeRed);
 }
 
+
 function draw() {
-  myParagraph.position(frameCount % 200, 0);
+   myParagraph.position(mouseX, mouseY);
 }
 
 function makeRed() {
   myParagraph.style("color", "red");
 }
 
+
+
 /*
 
 Some Questions:
 0. What is this percent sign all about? (hint: it's "modulus")
 1. Where, in the p5 reference, do we find all this DOM stuff?
+   On the main page it is the fourth option down.
 2. Why is the text so large when it's just a "paragraph"?
+   It is given a larger value in the style.css file!
 3. "color" and "red"? Where did those come from and where 
    could you find more style attributes that could be
    changed?
+   That is the format of the .style. You clarify the thing 
+   you want to change and then the style of thing you want to change it to.  
 
 Some Things to Try:
 0. Make the text follow the mouse pointer
