@@ -1,22 +1,25 @@
 let myParagraph;
 let button;
-let img = createImg('/assets/PacMan.png',
-'');
+// let img = createImg('/assets/PacMan.png');
 
 
 
 function setup() {
-   createCanvas(300, 300)
+   createCanvas(300, 300);
+   img = createImg("assets/PacMan.png", "PacMan picture didn't load. Sorry.")
+   img.position(100,100);
 
   button = createButton("Button")
   myParagraph = createP("html");
   myParagraph.position(0, 0);
   button.mousePressed(makeRed);
+  slider = createSlider(1, 100)
+  slider.addClass("sliderClass")
 }
-
 
 function draw() {
    myParagraph.position(mouseX, mouseY);
+   myParagraph.style("font-size", slider.value() + "px")
 }
 
 function makeRed() {

@@ -1,3 +1,7 @@
 p {
   font-size: xx-large;
+  .sliderClass {
+    width: 200px;
+    height: 200px;
+  }
 }
