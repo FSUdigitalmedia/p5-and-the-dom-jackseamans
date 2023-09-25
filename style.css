@@ -1,7 +1,13 @@
 p {
   font-size: xx-large;
+  color: green;
   .sliderClass {
     width: 200px;
     height: 200px;
   }
+}
+
+#theSlider {
+  width: 50%;
+  transform: rotate(30deg);
 }

@@ -1,32 +1,46 @@
 let myParagraph;
-let button;
+let myButton;
+let picture;
 // let img = createImg('/assets/PacMan.png');
 
 
 
 function setup() {
-   createCanvas(300, 300);
-   img = createImg("assets/PacMan.png", "PacMan picture didn't load. Sorry.")
-   img.position(100,100);
 
-  button = createButton("Button")
+  
   myParagraph = createP("html");
   myParagraph.position(0, 0);
-  button.mousePressed(makeRed);
+  
+  myButton = createButton("Button")
+  myButton.mouseClicked(clickedButton);
+
   slider = createSlider(1, 100)
   slider.addClass("sliderClass")
+  slider.id("theSlider")
+
+  picture = select("img");
+  picture.doubleClicked(clickedImage);
 }
 
 function draw() {
    myParagraph.position(mouseX, mouseY);
    myParagraph.style("font-size", slider.value() + "px")
+   slider.position(0, 300)
+}
+
+function clickedButton() {
+  //select('#second').style("font-size", "xx-small")
+  select("img").style("width", "100px")
 }
 
 function makeRed() {
   myParagraph.style("color", "red");
 }
 
+function clickedImage () {
+  select("#second").hide();
 
+}
 
 /*
 
